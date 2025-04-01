@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8a2be2, #4c4cff);
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  width: clamp(280px, 90%, 400px); /* Responsive width */
+  max-width: 450px;
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  border-color: white;
+}
+
+button {
+  background: rgba(166, 206, 244, 0.8);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 12px;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+button img {
+  width: 28px;
+}
+
+.weather-img img {
+  width: 120px;
+  margin: 25px 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report .temp {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.surr-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.surr-info div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.surr-info img {
+  width: 35px;
+}
+
+.wind-speed-info,
+.hum-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .surr-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card {
+    width: 100%; 
+    max-width: 600px; 
+  }
+  button {
+    padding: 14px; 
+    border-radius: 15px;
+    width: 100%; 
+    max-width: 100px; 
+    margin: 0 auto; 
+  }
+
+  button img {
+    width: 24px; 
+  }
+}
