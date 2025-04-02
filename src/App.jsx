@@ -21,7 +21,7 @@ const App = () => {
       const data = await response.json();
       if (data.cod === 200) {
         setWeather({
-          temp: Math.round(data.main.temp - 273.15),
+          temp: Math.round(data.main.temp),
           description: data.weather[0].description,
           humidity: data.main.humidity,
           windSpeed: data.wind.speed,
